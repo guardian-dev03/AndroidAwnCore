@@ -407,6 +407,9 @@ public class NotificationBuilder {
     }
 
     public NotificationBuilder setMediaSession(MediaSessionCompat mediaSession) {
+        if(NotificationBuilder.mediaSession != null){
+            NotificationBuilder.mediaSession.release();
+        }
         NotificationBuilder.mediaSession = mediaSession;
         return this;
     }
